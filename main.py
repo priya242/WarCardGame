@@ -1,42 +1,33 @@
 # !/usr/bin/python3
 # Libraries
 
-from random import shuffle
-import random
+from deck import Deck
 
 # intializing the variables
 player1 = []
 player2 = []
 winner = False;
 round = 0
-deck = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10,
-        10, 10, 10]
+# create the deck
+newDeck = Deck()
 
-# using random shuffle function
-random.shuffle(deck)
+# shuffle the deck
+newDeck.shuffle_deck()
 
-# divide the deck into half
-half = (len(deck) / 2)
-half = int(half)
-
+# divide and distribute the cards to each players
 # distribution of cards
-for x in range(0, half):
-    player1.append(deck[x])
-print(player1)
+for x in range(26):
+    player1.append(newDeck.deal())
+    player2.append(newDeck.deal())
 
-for x in range(half, len(deck)):
-    player2.append(deck[x])
-print(player2)
-
-# test case -1
-# player1 = [6, 5, 2, 4, 1, 4, 8, 5, 2, 5]
-# player2 = [2, 2, 6, 4, 5, 4, 9, 5, 7, 10]
+# print(player1)
+# print(player2)
 
 while winner == False:
     round += 1
     print("Round ", round)
-    print(player1)
-    print(player2)
+    # print(player1)
+    # print(player2)
     if len(player1) == 0:
         print("Player 2 wins!")
         winner = True
@@ -53,14 +44,14 @@ while winner == False:
     isWar = True
 
     while isWar:
-        if player1_cards[-1] > player2_cards[-1]:
+        if player1_cards[-1].value > player2_cards[-1].value:
             # player1 will take all of the cards
             for num in range(len(player1_cards)):
                 player1.append(player2_cards[num])
                 player1.append(player1_cards[num])
             isWar = False
 
-        elif player2_cards[-1] > player1_cards[-1]:
+        elif player2_cards[-1].value > player1_cards[-1].value:
             # player2 will take all of the cards
             for num in range(len(player2_cards)):
                 player2.append(player1_cards[num])
@@ -86,5 +77,6 @@ while winner == False:
                     player1_cards.append(player1.pop(0))
                     player2_cards.append(player2.pop(0))
 
-            # print(player1)
-            # print(player2)
+
+
+
