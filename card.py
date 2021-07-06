@@ -19,6 +19,7 @@ values = {'Two': 2,
 
 
 class Card:
+
     # constructor
     def __init__(self, suit, rank):
         self.suit = suit
@@ -28,6 +29,6 @@ class Card:
     def __str__(self):
         return self.rank + " of " + self.suit
 
-
 # print(Card('Spades', 'Ace'))
 # print(Card('Spades', 'Ten'))
+# print(Card('Hearts', 'Ten'))
