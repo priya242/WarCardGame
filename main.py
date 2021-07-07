@@ -99,4 +99,4 @@ def start_game(player1, player2):
 
 # start the card war game
 # NOTE -- comment the below line when running the tests please!
-# start_game(player1, player2)
+start_game(player1, player2)
