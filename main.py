@@ -77,13 +77,13 @@ class Game:
                     if len(player1.deck) < 4:
                         winner = True;
                         print("----------------------------------")
-                        print("Game Stop : Player 2 is the winner")
+                        print("Game End : Player 2 is the winner")
                         break
 
                     elif len(player2.deck) < 4:
                         winner = True;
                         print("----------------------------------")
-                        print("Game Stop : Player 1 is the winner")
+                        print("Game End : Player 1 is the winner")
                         break
 
                     else:
