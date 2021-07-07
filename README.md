@@ -14,9 +14,12 @@ If the two cards played are of equal value, then there is a "war". Both players 
 * The deck will always contain 52 cards, Ignoring Jokers in the set.
 * There will be only 2 players to play the game
 * Aces are high and Two’s of (club, heart, diamond, spade) are the lowest
-* The Values of Jack, Queen, King and Ace are 11, 12, 13, 14 respectively.
+* Suits are ignored - only compare the ranks.
+* The values of Jack, Queen, King and Ace are 11, 12, 13, 14 respectively.
 * To overcome the finite rounds scenario, I switched the order in which player's cards are added to the bottom of the winning player's deck (i.e. always opponent's  card first, then the player's card itself or vice versa)
 * If a player runs out of cards during a war, then that player immediately loses and the opponent player wins the game
+* The game ends when one player has won all the cards.
+
 
 # Future Implementations
 
