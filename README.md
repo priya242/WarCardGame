@@ -13,6 +13,8 @@ If the two cards played are of equal value, then there is a "war". Both players 
 
 * The deck will always contain 52 cards, Ignoring Jokers in the set.
 * There will be only 2 players to play the game
+* Each player should get 26 cards exactly when cards are distributed among the players.
+* When the cards are distributed, dealer deal the cards one at a time.
 * Aces are high and Two’s of (club, heart, diamond, spade) are the lowest
 * Suits are ignored - only compare the ranks.
 * The values of Jack, Queen, King and Ace are 11, 12, 13, 14 respectively.
