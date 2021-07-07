@@ -19,3 +19,6 @@ class Deck:
 
     def deal(self):
         return self.deck.pop(0)
+
+    def length(self):
+        return len(self.deck)
