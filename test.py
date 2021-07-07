@@ -3,10 +3,12 @@ import main
 from card import Card
 from player import Player
 from deck import Deck
+from main import Game
 
 
 # unit test class
 class TestWarCardGame(unittest.TestCase):
+    game = Game()
     test_cards = Deck()
 
     # check if the deck has a list of cards or not
@@ -19,7 +21,7 @@ class TestWarCardGame(unittest.TestCase):
 
     # test if each player is getting equal cards
     def test_distribute(self):
-        p1, p2 = main.distribute(self.test_cards)
+        p1, p2 = Game.distribute(self.game, self.test_cards)
         self.assertEqual(p1.get_length(), p2.get_length())
 
     # check exception is raised when there are no cards left in the list
@@ -54,7 +56,7 @@ class TestWarCardGame(unittest.TestCase):
         player2 = Player("2")
         player1.add(Card('Spades', 'Ace'))
         player2.add(Card('Spades', 'King'))
-        main.start_game(player1, player2)
+        Game.start_game(self.game, player1, player2)
         # winner should have total cards and loser left with 0 cards
         self.assertEqual(player1.get_length(), 2)
         self.assertEqual(player2.get_length(), 0)
